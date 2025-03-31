@@ -1,50 +1,28 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Native-TaskrunnerRN
 
-## Get started
 
-1. Install dependencies
+Introduction
 
-   ```bash
-   npm install
-   ```
+Native-TaskrunnerRN is a React Native module that provides a simple interface for scheduling background tasks on iOS. The primary goal of this project is to offer a way to leverage iOS’s native background task management system within a React Native environment, allowing developers to execute tasks in the background even when the app is not in the foreground.
 
-2. Start the app
 
-   ```bash
-    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+## Why This Project? : 
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+When building mobile apps, there are times when tasks such as data fetching, syncing, or processing need to continue even if the app is not actively being used. On iOS, background tasks are managed through the BackgroundTasks framework. React Native, however, does not provide a built-in way to interact with this feature directly.
 
-## Get a fresh project
+This project was created to address this gap. By wrapping iOS's background task system into a native module, I’ve made it easier for React Native developers to implement background tasks without needing to dive deep into Swift or Objective-C. It allows developers to schedule tasks and manage their execution in the background with minimal configuration.
+## Features
 
-When you're ready, run:
+- Register Background Tasks: Register background tasks with iOS using the BGTaskScheduler API.
+- Handle Task Expiration: Automatically handle task expiration and failure.
 
-```bash
-npm run reset-project
-```
+- Scheduled Task Execution: Schedule the next background task after the current one completes.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
+How It Works
 
-To learn more about developing your project with Expo, look at the following resources:
+This module leverages iOS’s BGTaskScheduler to register background tasks, which can be scheduled to run after a specified delay or at system-defined intervals. When a task is triggered, it’s handled in the background, and once completed, the system schedules the next one if necessary.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
